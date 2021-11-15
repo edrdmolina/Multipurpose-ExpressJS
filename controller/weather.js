@@ -16,14 +16,14 @@ module.exports = {
             }
         })
 
-        console.log(weatherData.data);
+        // console.log(weatherData.data);
 
-        fs.writeFile('weatherData.json', JSON.stringify(weatherData.data, null, 2), err => {
-            if (err) {
-                return console.log(err)
-            }
-            console.log('saved all data in json file')
-        })
+        // fs.writeFile('weatherData.json', JSON.stringify(weatherData.data, null, 2), err => {
+        //     if (err) {
+        //         return console.log(err)
+        //     }
+        //     console.log('saved all data in json file')
+        // })
 
         res.status(200).json({
             weatherData: weatherData.data,
