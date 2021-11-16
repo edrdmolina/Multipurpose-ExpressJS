@@ -6,15 +6,17 @@ const apiKey = process.env.OPENWEATHER_API_KEY;
 
 const fs = require('fs')
 
+const savedData = require('../data/weatherData.json')
+
 module.exports = {
     async weatherController(req, res, next) {
         // console.log(req.body)
         const { lat, lon, units, lang } = req.body;
-        const weatherData = await axios.get(oneCallUrl, {
-            params: {
-                lat, lon, appid: apiKey, units, lang
-            }
-        })
+        // const weatherData = await axios.get(oneCallUrl, {
+        //     params: {
+        //         lat, lon, appid: apiKey, units, lang
+        //     }
+        // })
 
         // console.log(weatherData.data);
 
@@ -26,7 +28,8 @@ module.exports = {
         // })
 
         res.status(200).json({
-            weatherData: weatherData.data,
+            // weatherData: weatherData.data,
+            weatherData: savedData
         })
     },
 }
