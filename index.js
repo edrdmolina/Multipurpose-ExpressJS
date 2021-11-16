@@ -3,12 +3,16 @@ if (process.env.NODE_ENV !== 'production') {
 }
 // Libraries
 const express = require('express');
+const cors = require('cors');
 
 // Initialize express
 const app = express();
 const port = process.env.PORT || 5000;
 // receive data as json
 app.use(express.json());
+
+// Use cors
+app.use(cors());
 
 // test route
 app.get('/', (req, res) => {
