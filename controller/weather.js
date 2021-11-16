@@ -9,6 +9,7 @@ const fs = require('fs')
 module.exports = {
     async weatherController(req, res, next) {
         res.set('Access-Control-Allow-Origin', '*');
+        res.set('Access-Control-Allow-Methods', 'POST');
         // console.log(req.body)
         const { lat, lon, units, lang } = req.body;
         const weatherData = await axios.get(oneCallUrl, {
