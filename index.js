@@ -12,6 +12,7 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 
 // Use cors
+// https://expressjs.com/en/resources/middleware/cors.html
 app.use(cors());
 
 // test route

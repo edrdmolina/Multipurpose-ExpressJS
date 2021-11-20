@@ -40,5 +40,24 @@ module.exports = {
             location
         })
     },
+    async getLatLon(req, res, next) {
+        const { input } = req.body;
+
+        console.log(input)
+
+        const location = await geoCoder.geocode(input)
+
+        console.log(location)
+        if(!location.length) {
+            return res.status(200).json({ 
+                error: 'No location found. Try a Different City or Zip Code'
+            })
+        }
+
+        return res.status(200).json({
+            lat: location[0].latitude,
+            lon: location[0].longitude
+        })
+    }
 
 }
