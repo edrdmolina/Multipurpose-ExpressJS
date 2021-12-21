@@ -11,14 +11,12 @@ const geoCoder = nodeGeocoder({
 });
 
 // const fs = require('fs')
-
-const savedData = require('../data/weatherData.json')
+// const savedData = require('../data/weatherData.json')
 
 module.exports = {
     async weatherController(req, res) {
         const { lat, lon, units, lang } = req.body;
-
-        /*
+        
         //* Get weather data from open weather API
         const weatherData = await axios.get(oneCallUrl, {
             params: {
@@ -26,8 +24,6 @@ module.exports = {
             }
         })
         if(!weatherData) return res.status(404);
-        */
-
         /*
         //* respond as JSON file to preserve API calls to openWeatherAPI. This is only done once to have response at hand.
         fs.writeFile('weatherData.json', JSON.stringify(weatherData.data, null, 2), err => {
@@ -37,13 +33,12 @@ module.exports = {
             console.log('saved all data in json file')
         })
         */
-
         // Reverse geocode to obtain location name.
         const location = await geoCoder.reverse({ lat, lon})
         if(!location.length) return res.status(404);
         return res.status(200).json({
-            // weatherData: weatherData.data,
-            weatherData: savedData,
+            weatherData: weatherData.data,
+            // weatherData: savedData,
             location: location[0]
         })
     },
@@ -57,8 +52,6 @@ module.exports = {
                 error: 'No location found. Try a Different City or Zip Code at geocode'
             })
         }
-
-
         // Filter out all locations except all that have country from input
         const location = result.filter(r => r.countryCode === countryCode)
         // console.log('location: ', location)
