@@ -4,6 +4,7 @@ if (process.env.NODE_ENV !== 'production') {
 // Libraries
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 
 // Initialize express
 const app = express();
@@ -16,9 +17,7 @@ app.use(express.json());
 app.use(cors());
 
 // test route
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 // Initialize routes
 const weatherAPI = require('./routes/weather');
@@ -26,6 +25,11 @@ app.use('/api/weather', weatherAPI);
 
 const jokesAPI = require('./routes/jokes');
 app.use('/api/jokes', jokesAPI);
+
+// Handles any requests that don't match the ones above
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname+'/client/public/index.html'));
+  });
 
 app.listen(port, () => {
     console.log(`API Server listening at http://localhost:${port}`)
