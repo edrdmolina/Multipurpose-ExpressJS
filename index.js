@@ -16,9 +16,6 @@ app.use(express.json());
 // https://expressjs.com/en/resources/middleware/cors.html
 app.use(cors());
 
-// test route
-app.use(express.static(path.join(__dirname, 'client/build')));
-
 // Initialize routes
 const weatherAPI = require('./routes/weather');
 app.use('/api/weather', weatherAPI);
@@ -27,6 +24,7 @@ const jokesAPI = require('./routes/jokes');
 app.use('/api/jokes', jokesAPI);
 
 // Handles any requests that don't match the ones above
+app.use(express.static(path.join(__dirname, 'client/build')));
 app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/public/index.html'));
   });
