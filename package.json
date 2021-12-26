@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Eduardo Molina",
   "license": "ISC",
@@ -18,8 +18,5 @@
     "moment": "^2.29.1",
     "node-geocoder": "^3.27.0",
     "query-string": "^7.0.1"
-  },
-  "engines": {
-    "node": "14.16.0"
   }
 }
