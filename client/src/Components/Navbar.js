@@ -37,7 +37,6 @@ function Navbar() {
             <a href='#about'>About</a>
             <a href='#weather'>Weather</a>
             <a href='#chuckNorris'>Chuck Norris Jokes</a>
-            
         </div>
     )
 }

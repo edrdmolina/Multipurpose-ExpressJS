@@ -1,13 +1,13 @@
 // Libraries
-import React, { useEffect } from 'react';
+import React from 'react';
 import { createUseStyles } from 'react-jss';
-import axios from 'axios';
 
 // Components
 import Navbar from './Components/Navbar';
 import Banner from './Components/Banner';
 import About from './Components/About';
 import Weather from './Components/Weather';
+import ChuckNorrisJokes from './Components/ChuckNorrisJokes';
 
 // Styles
 const useStyles = createUseStyles({
@@ -31,13 +31,6 @@ const useStyles = createUseStyles({
 
 function App() {
   const classes = useStyles();
-  useEffect(() => getData());
-
-  async function getData() {
-    const res = await axios.get('/api/jokes/joke');
-    console.log(res)
-  }
-
   return (
     <div className={classes.App}>
       < Navbar />
@@ -45,6 +38,7 @@ function App() {
         < Banner />
         < About />
         < Weather />
+        < ChuckNorrisJokes />
       </main>
     </div>
   );

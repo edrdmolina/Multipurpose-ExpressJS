@@ -4,7 +4,7 @@ import { createUseStyles } from 'react-jss';
 
 // Styles
 const useStyles = createUseStyles({
-    Weather: {
+    ChuckNorrisJokes: {
         width: '80%',
         margin: '2rem 0',
         boxShadow: '0 15px 25px rgba(0,0,0,0.15)',
@@ -14,7 +14,7 @@ const useStyles = createUseStyles({
     Ribbon: {
         backgroundColor: '#5B6C5D',
         height: '50px',
-        width: '200px',
+        width: '300px',
         borderRadius: '15px 5px 5px 0px',
         boxShadow: '2px 2px 5px rgba(0,0,0,0.5)',
         position: 'relative',
@@ -69,7 +69,7 @@ const useStyles = createUseStyles({
 
         '& p': {
             display: 'inline',
-            fontSize: '18px',
+            fontSize: '18px'
         },
         '& i:hover': {
             color: 'red',
@@ -83,12 +83,10 @@ const useStyles = createUseStyles({
             marginLeft: '2rem'
         }
     },
-    routeRow: { 
-        margin: '1rem 0'
-    },
-    post: { 
+    routeRow: { margin: '1rem 0' },
+    get: { 
         color: 'white',
-        backgroundColor: 'red',
+        backgroundColor: 'green',
         padding: '5px 10px',
         borderRadius: '5px',
         marginRight: '1rem',
@@ -100,21 +98,18 @@ const useStyles = createUseStyles({
         display: 'inline',
         fontSize: '18px'
     },
-    description: {
-        display: 'inline-block'
-    },
     '@media (max-width: 992px)': {
         routeRow: {
             display: 'flex',
             flexDirection: 'column'
         },
-        post: { 
-            maxWidth: '45px',
+        get: { 
+            maxWidth: '35px',
         }
     }
 })
 
-function Weather() {
+function ChuckNorrisJokes() {
     const classes = useStyles();
 
     function copyRoute(e) {
@@ -122,78 +117,61 @@ function Weather() {
         navigator.clipboard.writeText(route)
     }
     return (
-        <div className={classes.Weather} id='weather'>
+        <div className={classes.ChuckNorrisJokes} id='chuckNorris'>
             <div className={classes.Ribbon}>
-                <h2>Weather</h2>
+                <h2>Chuck Norris Jokes</h2>
             </div>
             <div className={classes.content}>
                 <h3>Routes:</h3>
                 <div className={classes.route}>
                     <div className={classes.routeRow}>
-                        <div className={classes.post}>POST</div>
-                        <p>https://multi-purpose-api.herokuapp.com/api/weather/</p>
-                        <i 
+                        <div className={classes.get}>GET</div>
+                        <p>https://multi-purpose-api.herokuapp.com/api/jokes/
+                            <i 
                             className={`far fa-copy ${classes.copyRoute}`}
                             onClick={copyRoute}
-                        ></i>
+                            ></i>
+                        </p>
+                        
                     </div>
                     <div className={classes.row}>
                         <p>
-                            Returns JSON file with weather data and location data. 
-                            Weather data comes from the openweather api one call.
-                            Location data comes from using the reverse geolocation api from
-                            node-geocoder.
-                            <br/>
+                            Returns a JSON file with a list of 90 Chuck Norris Jokes.
+                            All jokes derived from web scraping
                             <a 
-                                href='https://openweathermap.org/api/one-call-api/#example' 
+                                href='https://deadliestjokes.fandom.com/wiki/Chuck_Norris' 
                                 target="_blank" rel="noreferrer noopener"
-                            >Example of Weather data</a> <br/>
+                            > Deadliest Jokes Wiki</a> using 
                             <a 
-                                href='https://www.npmjs.com/package/node-geocoder' 
+                                href='https://www.npmjs.com/package/cheerio' 
                                 target="_blank" rel="noreferrer noopener"
-                            >Example of Location data</a> 
-
+                            > cheerio</a>.
                         </p>
-                    </div>
-                    <div className={classes.row}>
-                        <p>
-                            Post request requires 4 variables in the request body.
-                        </p>
-                        <ul>
-                            <li>lat: 33.44</li>
-                            <li>lon: 94.04</li>
-                            <li>units: standard, metric or imperial</li>
-                            <li>lang: en</li>
-                        </ul>
                     </div>
                 </div>
                 <div className={classes.route}>
                     <div className={classes.routeRow}>
-                        <div className={classes.post}>POST</div>
-                        <p>https://multi-purpose-api.herokuapp.com/api/weather/geolocation</p>
-                        <i 
-                            className={`far fa-copy ${classes.copyRoute}`}
-                            onClick={copyRoute}
-                        ></i>
+                        <div className={classes.get}>GET</div>
+                        <p>https://multi-purpose-api.herokuapp.com/api/jokes/joke
+                            <i 
+                                className={`far fa-copy ${classes.copyRoute}`}
+                                onClick={copyRoute}
+                            ></i>
+                        </p>
                     </div>
                     <div className={classes.row}>
                         <p>
-                            Returns JSON file with location data derived from the node-geocoder.
-                            <br/>
+                            Returns a JSON file with a single random joke from a list of 90 Chuck Norris Jokes.
+                            All jokes derived from web scraping
                             <a 
-                                href='https://www.npmjs.com/package/node-geocoder' 
+                                href='https://deadliestjokes.fandom.com/wiki/Chuck_Norris' 
                                 target="_blank" rel="noreferrer noopener"
-                            >Example of Location data</a> 
+                            > Deadliest Jokes Wiki</a> using 
+                            <a 
+                                href='https://www.npmjs.com/package/cheerio' 
+                                target="_blank" rel="noreferrer noopener"
+                            > cheerio</a>.
                         </p>
-                    </div>
-                    <div className={classes.row}>
-                        <p>
-                            Post request requires 2 variables in the request body. Use Zipcode for best results.
-                        </p>
-                        <ul>
-                            <li>Country Code: US</li>
-                            <li>Address: City or zipcode.</li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -201,4 +179,4 @@ function Weather() {
     )
 }
 
-export default Weather
+export default ChuckNorrisJokes
