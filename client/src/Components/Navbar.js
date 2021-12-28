@@ -9,19 +9,22 @@ import { createUseStyles } from 'react-jss';
 const useStyles = createUseStyles({
     Navbar: {
         width: '100%',
-        height: '50px',
+        maxWidth: '1200px',
+        height: '5vh',
         backgroundColor: '#0A1128',
-        position: 'sticky',
+        position: 'fixed',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
+        zIndex: '20',
         '& a': {
             textDecoration: 'none',
-            color: 'rgba(255,255,255,0.5)'
+            color: 'rgba(255,255,255,0.5)',
+            fontSize: '20px'
         },
         '& a:hover': {
-            color: 'white'
+            color: 'rgba(255,255,255,0.75)',
         }
     }
 })

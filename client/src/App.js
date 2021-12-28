@@ -4,9 +4,9 @@ import { createUseStyles } from 'react-jss';
 import axios from 'axios';
 
 // Components
-import Background from './Components/Background';
 import Navbar from './Components/Navbar';
 import Banner from './Components/Banner';
+import About from './Components/About';
 
 // Styles
 const useStyles = createUseStyles({
@@ -20,9 +20,12 @@ const useStyles = createUseStyles({
     maxWidth: '1200px',
     boxShadow: '0px 0px 10px 10px rgba(0,0,0,0.5)',
     minHeight: '100vh',
-    backgroundColor: '#FEFCFB'
+    backgroundColor: '#FEFCFB',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
   }
-
 })
 
 function App() {
@@ -36,10 +39,10 @@ function App() {
 
   return (
     <div className={classes.App}>
-      < Background />
+      < Navbar />
       <main className={classes.Main}>
-        < Navbar />
         < Banner />
+        < About />
       </main>
     </div>
   );

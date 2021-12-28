@@ -2,18 +2,21 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
+// Components
+import Logo from './Logo';
+
 // Styles
 import BannerImage from '../Images/BannerImage.jpg';
 const useStyles = createUseStyles({
     Banner: {
-        height: '50vh',
+        height: '60vh',
         width: '100%',
         backgroundImage: `url(${BannerImage})`,
         display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
+        flexDirection: 'column',
+        justifyContent: 'space-around',
         alignItems: 'center',
-
+        margin: '2rem 0',
 
         '& h1': {
             fontSize: '50px',
@@ -36,6 +39,7 @@ function Banner() {
     const classes = useStyles();
     return (
         <div className={classes.Banner}>
+            <Logo />
             <h1>Multipurpose Express API</h1>
         </div>
     )
