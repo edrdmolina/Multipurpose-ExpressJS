@@ -18,7 +18,7 @@ const useStyles = createUseStyles({
   },
   Main: {
     width: '100%',
-    maxWidth: '1200px',
+    maxWidth: '1400px',
     boxShadow: '0px 0px 10px 10px rgba(0,0,0,0.5)',
     minHeight: '100vh',
     backgroundColor: '#F7EDF0',

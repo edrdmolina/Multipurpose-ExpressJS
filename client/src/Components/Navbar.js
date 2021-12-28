@@ -9,7 +9,7 @@ import { createUseStyles } from 'react-jss';
 const useStyles = createUseStyles({
     Navbar: {
         width: '100%',
-        maxWidth: '1200px',
+        maxWidth: '1400px',
         height: '5vh',
         // backgroundColor: '#0A1128',
         backgroundColor: '#465775',
