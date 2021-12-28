@@ -7,6 +7,7 @@ import axios from 'axios';
 import Navbar from './Components/Navbar';
 import Banner from './Components/Banner';
 import About from './Components/About';
+import Weather from './Components/Weather';
 
 // Styles
 const useStyles = createUseStyles({
@@ -20,7 +21,7 @@ const useStyles = createUseStyles({
     maxWidth: '1200px',
     boxShadow: '0px 0px 10px 10px rgba(0,0,0,0.5)',
     minHeight: '100vh',
-    backgroundColor: '#FEFCFB',
+    backgroundColor: '#F7EDF0',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -43,6 +44,7 @@ function App() {
       <main className={classes.Main}>
         < Banner />
         < About />
+        < Weather />
       </main>
     </div>
   );

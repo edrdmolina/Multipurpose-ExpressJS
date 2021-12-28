@@ -11,7 +11,8 @@ const useStyles = createUseStyles({
         width: '100%',
         maxWidth: '1200px',
         height: '5vh',
-        backgroundColor: '#0A1128',
+        // backgroundColor: '#0A1128',
+        backgroundColor: '#465775',
         position: 'fixed',
         display: 'flex',
         flexDirection: 'row',
@@ -20,11 +21,11 @@ const useStyles = createUseStyles({
         zIndex: '20',
         '& a': {
             textDecoration: 'none',
-            color: 'rgba(255,255,255,0.5)',
+            color: 'rgba(255,255,255,0.75)',
             fontSize: '20px'
         },
         '& a:hover': {
-            color: 'rgba(255,255,255,0.75)',
+            color: 'rgba(255,255,255,1)',
         }
     }
 })
