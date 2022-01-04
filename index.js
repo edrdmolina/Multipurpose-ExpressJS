@@ -5,10 +5,15 @@ if (process.env.NODE_ENV !== 'production') {
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const helmet = require('helmet');
 
 // Initialize express
 const app = express();
 const port = process.env.PORT || 5000;
+
+// helmet for security purposes
+app.use(helmet());
+
 // receive data as json
 app.use(express.json());
 
