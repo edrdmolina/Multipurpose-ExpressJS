@@ -16,7 +16,7 @@ const useStyles = createUseStyles({
         flexDirection: 'column',
         justifyContent: 'space-around',
         alignItems: 'center',
-        margin: '2rem 0',
+        margin: '5vh 0 0 0',
 
         '& h1': {
             fontSize: '50px',
