@@ -14,7 +14,7 @@ const useStyles = createUseStyles({
     Ribbon: {
         backgroundColor: '#5B6C5D',
         height: '50px',
-        width: '300px',
+        width: '375px',
         borderRadius: '15px 5px 5px 0px',
         boxShadow: '2px 2px 5px rgba(0,0,0,0.5)',
         position: 'relative',
