@@ -25,9 +25,9 @@ app.use('/api/jokes', jokesAPI);
 
 // Handles any requests that don't match the ones above
 app.use(express.static(path.join(__dirname, 'client/build')));
-app.get('*', (req,res) =>{
-    res.sendFile(path.join(__dirname+'/client/public/index.html'));
-  });
+// app.get('*', (req,res) =>{
+//     res.sendFile(path.join(__dirname+'/client/public/index.html'));
+//   });
 
 app.listen(port, () => {
     console.log(`API Server listening at http://localhost:${port}`)
