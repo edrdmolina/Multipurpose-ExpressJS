@@ -126,12 +126,11 @@ function ChuckNorrisJokes() {
                 <div className={classes.route}>
                     <div className={classes.routeRow}>
                         <div className={classes.get}>GET</div>
-                        <p>https://multi-purpose-api.herokuapp.com/api/jokes/
-                            <i 
+                        <p>https://multi-purpose-api.herokuapp.com/api/jokes/</p>
+                        <i 
                             className={`far fa-copy ${classes.copyRoute}`}
                             onClick={copyRoute}
-                            ></i>
-                        </p>
+                        />
                         
                     </div>
                     <div className={classes.row}>
@@ -152,12 +151,11 @@ function ChuckNorrisJokes() {
                 <div className={classes.route}>
                     <div className={classes.routeRow}>
                         <div className={classes.get}>GET</div>
-                        <p>https://multi-purpose-api.herokuapp.com/api/jokes/joke
-                            <i 
-                                className={`far fa-copy ${classes.copyRoute}`}
-                                onClick={copyRoute}
-                            ></i>
-                        </p>
+                        <p>https://multi-purpose-api.herokuapp.com/api/jokes/joke</p>
+                        <i 
+                            className={`far fa-copy ${classes.copyRoute}`}
+                            onClick={copyRoute}
+                        />
                     </div>
                     <div className={classes.row}>
                         <p>

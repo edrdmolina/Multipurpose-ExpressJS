@@ -5,12 +5,23 @@ if (process.env.NODE_ENV !== 'production') {
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const helmet = require('helmet');
+const mongoose = require('mongoose');
+const mongoUri = process.env['MONGO_URI']
+
+mongoose.connect(mongoUri, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+})
 
 // Initialize express
 const app = express();
 const port = process.env.PORT || 5000;
 // receive data as json
 app.use(express.json());
+
+// helmet for security purposes
+app.use(helmet());
 
 // Use cors
 // https://expressjs.com/en/resources/middleware/cors.html
@@ -22,6 +33,9 @@ app.use('/api/weather', weatherAPI);
 
 const jokesAPI = require('./routes/jokes');
 app.use('/api/jokes', jokesAPI);
+
+const portfolioAPI = require('./routes/portfolio');
+app.use('/api/portfolio', portfolioAPI);
 
 // Handles any requests that don't match the ones above
 app.use(express.static(path.join(__dirname, 'client/build')));
