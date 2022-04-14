@@ -114,7 +114,6 @@ function ChuckNorrisJokes() {
 
     function copyRoute(e) {
         let route = e.target.previousSibling.innerText;
-        console.log(route)
         navigator.clipboard.writeText(route)
     }
     return (
